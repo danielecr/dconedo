@@ -17,3 +17,4 @@ and dind:
 
 https://github.com/jpetazzo/dind
 
+`wrapdocker` script cames from dind.
