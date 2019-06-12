@@ -39,8 +39,8 @@ to host filesystem). This is that image, docker compose near a dockerd: dconedo.
 pipeline {
     agent {
         docker {
-            image 'pdmlab/jenkins-node-docker-agent:6.11.1'
-            args '-v /var/run/docker.sock:/var/run/docker.sock -v /srv/docker/jenkins-data/.ssh:/root/.ssh'
+            image 'danielecr/dconedo:3.9'
+            args '-v /var/run/docker.sock:/var/run/docker.sock -v /home/user/.ssh:/home/dcind/.ssh'
         }
     }
 ...
