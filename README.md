@@ -36,20 +36,28 @@ to host filesystem). This is that image, docker compose near a dockerd: dconedo.
 ## use in jenkins pipeline
 
 ```
+def docker_grp
+node {
+    docker_grp = sh(returnStdout: true, script: "stat -c '%g' /var/run/docker.sock").trim()
+}
+
 pipeline {
     agent {
         docker {
             image 'danielecr/dconedo:3.9'
-            args '-v /var/run/docker.sock:/var/run/docker.sock -v /home/user/.ssh:/home/dcind/.ssh'
+            args '--group-add ' + docker_grp +' -v /var/run/docker.sock:/var/run/docker.sock -v /home/user/.ssh:/home/dcind/.ssh'
         }
     }
 ...
 ```
 then as usual.
 
+*added --group-add*, thanks to https://github.com/jenkinsci/docker/issues/263
+
+
 ## Does it works?
 
-I do not know, I hope so.
+Yes, it does.
 
 ## group assigned to the dcind user
 
