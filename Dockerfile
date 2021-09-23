@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM alpine:3.14
 MAINTAINER daniele@smartango.com
 
 RUN apk --update add \
@@ -9,9 +9,11 @@ RUN apk --update add \
     openssh \
     git \
     curl \
+    rust \
+    cargo \
     docker \
     py-pip \
-    python-dev \
+    python3-dev \
     libffi-dev \
     openssl-dev \
     gcc \

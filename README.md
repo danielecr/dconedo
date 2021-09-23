@@ -1,6 +1,6 @@
 # Docker Compose Near Dockerd
 
-Everybody did it, so I am doing it too. You are free to use other source.
+Everybody did it, so I am doing it too.
 This is based in dind wrapdocker script and alpine, also it has ssh, but it has no nodejs.
 
 This is not "docker in a docker", but "docker near a docker" style, it requires
