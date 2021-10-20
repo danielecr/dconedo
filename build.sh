@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build -t danielecr/dconedo -t danielecr/dconedo:1.24 .
+docker build -t danielecr/dconedo -t danielecr/dconedo:1.25 .

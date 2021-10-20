@@ -6,7 +6,7 @@ RUN apk --update add \
     iptables \
     ca-certificates \
     e2fsprogs \
-    openssh \
+    openssh-client \
     git \
     curl \
     rust \
