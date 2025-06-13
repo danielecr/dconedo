@@ -1,5 +1,5 @@
-FROM alpine:3.14
-MAINTAINER daniele@smartango.com
+FROM alpine:3.22
+LABEL org.opencontainers.image.authors="daniele@smartango.com"
 
 RUN apk --update add \
     bash \
@@ -9,17 +9,8 @@ RUN apk --update add \
     openssh-client \
     git \
     curl \
-    rust \
-    cargo \
-    docker \
-    py-pip \
-    python3-dev \
-    libffi-dev \
-    openssl-dev \
-    gcc \
-    libc-dev \
-    make \
-    && pip install docker-compose \
+    docker-cli-compose \
+    docker-cli-buildx \
     && rm -rf /var/cache/apk/* \
     && addgroup --gid 1000 dcind \
     && adduser --disabled-password \
