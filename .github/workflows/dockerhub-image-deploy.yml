@@ -22,3 +22,5 @@ jobs:
         password: ${{ secrets.DOCKER_TOKEN }}
     - name: Push Docker image
       run: docker push danielecr/dconedo:${{ github.ref_name }}
+    - name: Push latest
+      run docker push danielecr/dconedo:latest
